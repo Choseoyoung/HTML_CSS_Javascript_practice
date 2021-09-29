@@ -1,0 +1,32 @@
+body.main{
+	background: aliceblue;
+}
+footer{
+	background: orange;
+	border-radius: 10px;
+}
+h1{
+	color: brown;
+	text-align: center;
+}
+p{
+	font-family: 휴먼편지체;
+	text-indent: 1em;
+	font-size: 1em;
+}
+hr{
+	border: 1pa solid black;
+}
+form{
+	background: pink;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+form>b{
+	color: darkblue;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+form>f2{
+	font-family: 휴먼편지체;
+}
