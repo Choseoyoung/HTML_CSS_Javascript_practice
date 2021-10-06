@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>오디오 재생 리스트</title>
+</head>
+<style>
+	ul{
+		list-style-type: decimal;
+		list-style-image: 1px solid green;
+	}
+	#list-number {
+		border: 1px solid green;
+	}
+	#list-title {
+		border-bottom: 1px solid grey;
+		width: 200px;
+		text-align: left;
+	}
+	#change:hover{
+		color: magenta;
+	}
+</style>
+<body>
+	<h1>오디오 재생 리스트</h1>
+	<hr>
+	<table>
+		<tr>
+			<td id="list-number">1</td>
+			<th id="list-title">애국가</th>
+			<td><input id="change" type="button" value="재생"></td>
+			<td><input id="change" type="button" value="중지"></td>
+		</tr>
+
+		<tr>
+			<td id="list-number">2</td>
+			<th id="list-title">Moon Glow</th>
+			<td><input id="change" type="button" value="재생"></td>
+			<td><input id="change" type="button" value="중지"></td>
+		</tr>
+
+		<tr>
+			<td id="list-number">3</td>
+			<th id="list-title">Embraceable You</th>
+			<td><input id="change" type="button" value="재생"></td>
+			<td><input id="change" type="button" value="중지"></td>
+		</tr>
+	</table>
+</body>
+</html>
