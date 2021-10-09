@@ -3,45 +3,40 @@
 <head>
 	<meta charset="utf-8">
 	<title>오디오 재생 리스트</title>
+	<style>
+		#number_list{
+			border: 1px solid yellowgreen;
+		}
+		#title_list{
+			border-bottom: 1px solid grey;
+			width: 200px;
+			text-align: left;
+		}
+		#change:hover{
+			color: magenta;
+		}
+
+	</style>
 </head>
-<style>
-	ul{
-		list-style-type: decimal;
-		list-style-image: 1px solid green;
-	}
-	#list-number {
-		border: 1px solid green;
-	}
-	#list-title {
-		border-bottom: 1px solid grey;
-		width: 200px;
-		text-align: left;
-	}
-	#change:hover{
-		color: magenta;
-	}
-</style>
 <body>
 	<h1>오디오 재생 리스트</h1>
 	<hr>
 	<table>
 		<tr>
-			<td id="list-number">1</td>
-			<th id="list-title">애국가</th>
+			<td id="number_list">1</td>
+			<th id="title_list">애국가</th>
 			<td><input id="change" type="button" value="재생"></td>
 			<td><input id="change" type="button" value="중지"></td>
 		</tr>
-
 		<tr>
-			<td id="list-number">2</td>
-			<th id="list-title">Moon Glow</th>
+			<td id="number_list">2</td>
+			<th id="title_list">Moon Glow</th>
 			<td><input id="change" type="button" value="재생"></td>
 			<td><input id="change" type="button" value="중지"></td>
 		</tr>
-
 		<tr>
-			<td id="list-number">3</td>
-			<th id="list-title">Embraceable You</th>
+			<td id="number_list">3</td>
+			<th id="title_list">Embraceable You</th>
 			<td><input id="change" type="button" value="재생"></td>
 			<td><input id="change" type="button" value="중지"></td>
 		</tr>
