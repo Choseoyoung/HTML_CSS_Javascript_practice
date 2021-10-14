@@ -1,0 +1,22 @@
+body{
+	background: aliceblue;
+	font-family: '휴먼편지체';
+}
+section{
+	background: pink;
+	margin: 5px;
+}
+footer{
+	background: orange;
+	border-radius: 20px;
+}
+h1{
+	color: brown;
+	text-align: center;
+	font-family: '맑은 고딕'
+}
+h5{
+	display: inline-block;
+	font-family: '맑은 고딕';
+	color: darkblue;
+}

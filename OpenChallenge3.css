@@ -1,0 +1,58 @@
+h1{
+	color: brown;
+	text-align: center;
+}
+h2{
+	color: blue;
+	text-shadow: 2px 2px 2px lightblue;
+}
+a{
+	color: blue;
+	text-shadow: 2px 2px 2px lightblue;
+	text-decoration: none;
+}
+p{
+	text-indent: 1em;
+	font-family: '휴먼편지체';
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	border: 1px solid black;
+}
+hr{
+	border: 1px solid black;
+}
+header{
+	display: block;
+	width: 100%;
+	background: yellow;
+	margin: 0px;
+	padding: 0px;
+}
+nav{
+	display: inline-block;
+	float: left;
+	width: 15%;
+	height: 600px;
+	background: orange;
+	margin: 0px;
+	padding: 0px;
+}
+section{
+	display: inline-block;
+	float: right;
+	width: 85%;
+	height: 600px;
+	background: aliceblue;
+	margin: 0px;
+	padding: 0px;
+}
+footer{
+	display: block;
+	width: 100%;
+	background: lightpink;
+	border-radius: 20px;
+	margin: 0px;
+	padding: 0px;
+}
