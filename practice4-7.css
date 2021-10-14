@@ -1,0 +1,12 @@
+div#card{
+	background-image: url('media/spade-2.png');
+	background-size: 120px 200px;
+	width: 120px;
+	height: 200px;
+}
+div#card:hover{
+	background-image: url('media/spade-7.png');
+	background-size: 120px 200px;
+	width: 120px;
+	height: 200px;
+}
