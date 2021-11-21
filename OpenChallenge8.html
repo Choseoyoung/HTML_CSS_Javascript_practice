@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>겜블링 게임</title>
+	<script>
+		var num1 = 0;
+		var num2 = 0;
+		var num3 = 0;
+		var numArray=new Array();
+
+		function change1() {
+			if(num1==0){
+				var span = document.getElementById("number1");
+            	var num = Math.floor(Math.random()*3);
+            	span.innerHTML = num;
+            	numArray[0] = num;
+            	num1 = 1;
+			}
+		}
+		function change2() {
+			if(num2==0){
+				var span = document.getElementById("number2");
+            	var num = Math.floor(Math.random()*3);
+            	span.innerHTML = num;
+            	numArray[1] = num;
+            	num2 = 1;
+			}
+		}
+		function change3() {
+			if(num3==0){
+				var span = document.getElementById("number3");
+            	var num = Math.floor(Math.random()*3);
+            	span.innerHTML = num;
+            	numArray[2] = num;
+            	num3 = 1;
+			}
+			Result();
+		}
+
+		function Result() {
+			var obj = document.getElementById("parent");
+			var newP = document.createElement("p");
+			if(numArray[0]==numArray[1]&numArray[1]==numArray[2])
+				newP.innerHTML="Success(click here to do again";
+			else
+				newP.innerHTML="fail(click here to do again";
+
+			newP.addEventListener("click",
+				function(){
+					location.reload();
+				})
+			newP.style.color="plum";
+			obj.appendChild(newP);
+		}
+	</script>
+</head>
+<body id = "parent">
+	<h3>겜블링 게임</h3>
+	각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+	<hr>
+	<div style="background-color:mistyrose; border: 1px solid plum; color: blue; font-size: 100px;">
+		<span id="number1" onclick="change1()">0</span>
+		<span id="number2" onclick="change2()">0</span>
+		<span id="number3" onclick="change3()">0</span>
+	</div>
+</body>
+</html>

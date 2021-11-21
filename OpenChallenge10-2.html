@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>눈 내리는 샤갈의 마을</title>
+	<style>
+		body{
+			background-image: url("./media/Lighthouse.png");
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		div{
+			position: absolute;
+			color: white;
+			font-size: 50px;
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body id="parent">
+	<script>
+		var timerID=setInterval("move()",200);
+
+		var leftArray = new Array();
+		var topArray = new Array();
+		var divArray = new Array();
+		var snowcount = 30;
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+
+		for(var i=0;i<snowcount;i++){
+			leftArray[i]=Math.floor(Math.random()*width);
+			topArray[i]=Math.floor(Math.random()*height);
+
+			var obj = document.getElementById("parent");
+			var newDIV = document.createElement("div");
+			newDIV.innerHTML="*";
+			newDIV.style.left=leftArray[i]+"px";
+			newDIV.style.top=topArray[i]+"px";
+			newDIV.setAttribute("id",i);
+			obj.appendChild(newDIV);
+			divArray[i]=newDIV;
+		}
+
+		function move(){
+			for(var i=0;i<snowcount;i++){
+				topArray[i]=topArray[i]+10;
+				if(topArray[i]>height){
+					topArray[i]=0;
+				}
+				divArray[i].style.top=topArray[i]+"px";
+			}
+		}
+	</script>
+</body>
+</html>

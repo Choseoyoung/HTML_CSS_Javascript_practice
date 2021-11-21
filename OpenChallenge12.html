@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>단어장 만들기</title>
+</head>
+<body>
+	<h3>나의 단어장 만들기</h3>
+	<hr>
+	<form>
+		영어 <input id="english" type="text"><br>
+		한글 <input id="korean" type="text">
+	</form>
+	<button onclick="store()">단어 저장</button>
+	<button onclick="retrieve()">영단어 검색</button>
+	<button onclick="remove()">단어 삭제</button>
+	<button onclick="show()">전체 보기</button>
+<script>
+	var english = document.getElementById("english");
+	var korean = document.getElementById("korean");
+	var win=null;
+
+	function store() {
+		if(!window.sessionStorage){
+			alert("세션 스토리지를 지원하지 않습니다.");
+			return;
+		}
+		if(sessionStorage.getItem(english.value)!=null){
+			var ret = confirm(english.value+"는 이미 있습니다. 수정하시겠습니까?");
+			if(ret ==false) return;
+		}
+		sessionStorage.setItem(english.value,korean.value);
+	}
+	
+	function retrieve(){
+		if(!window.sessionStorage){
+			alert("세션 스토리지를 지원하지 않습니다.");
+			return;
+		}
+		var val = sessionStorage.getItem(english.value);
+		if(val == null)
+			alert(english.value+"는 없는 단어입니다.");
+		else
+			korean.value = val;
+	}
+
+	function remove(){
+		if(!window.sessionStorage){
+			alert("세션 스토리지를 지원하지 않습니다.");
+			return;
+		}
+		var val = sessionStorage.getItem(english.value);
+		if(val == null)
+			alert(english.value+"는 없는 단어입니다.");
+		else{
+			var val = sessionStorage.removeItem(english.value);
+		}
+	}
+
+	function show(){
+		if(win==null || win.closed){
+			win=window.open("","myWin","width=300,height=200");
+		}
+		win.document.open();
+		win.document.write("<h3>나의 단어장 모두 출력</h3><hr><table id='mytable' style='background:aliceblue'>");
+		for(var i=0;i<sessionStorage.length;i++){
+			var mytable=win.document.getElementById('mytable');
+			var newtr = document.createElement("tr");
+			var td1 = document.createElement("td");
+			var th2 = document.createElement("th");
+			var td3 = document.createElement("td");
+			td1.style.border="1px solid green";
+			td1.innerHTML=i+1;
+			th2.innerHTML=sessionStorage.key(i);
+			th2.style.width="100px";
+			td3.innerHTML=sessionStorage.getItem(sessionStorage.key(i));
+			td3.style.width="100px";
+			newtr.appendChild(td1);
+			newtr.appendChild(th2);
+			newtr.appendChild(td3);
+			mytable.appendChild(newtr);
+		}
+		win.document.write("</table>");
+		win.document.close();
+	}
+</script>
+</body>
+</html>

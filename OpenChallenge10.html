@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>눈 내리는 사갈의 마을</title>
+</head>
+<style>
+   body{
+      background-image: url("./media/Lighthouse.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+   }
+   div{
+      position: absolute;
+      font-size: 50px;
+      color: white;
+      width: 20px;
+      height: 20px;
+   }
+</style>
+<body>
+<script>
+   var leftArray=new Array();
+   var topArray=new Array();
+   var snowcount=30;
+
+   function set() {
+   		var text="";
+       for(var i=0;i<snowcount;i++ ){
+           leftArray[i] = Math.floor(Math.random()*(window.innerWidth));
+           topArray[i] = Math.floor(Math.random()*(window.innerHeight));
+           text="<div style='position:absolute;top:"+topArray[i]+"px; left:"+leftArray[i]+"px;'>*<div>"
+           document.body.innerHTML+=text;
+       }
+    }
+
+   function snow(){
+   	document.body.innerHTML="";
+      var text="";
+       for(var i=0;i<snowcount;i++ ){
+           topArray[i]+=10;
+           if(topArray[i]>window.innerHeight){
+           		topArray[i]=0;
+           }
+           //newDIV.style.left=leftArray[i]+'px';
+           //newDIV.style.top=topArray[i]+'px';
+           text="<div style='position:absolute;top:"+topArray[i]+"px; left:"+leftArray[i]+"px;'>*<div>"
+           document.body.innerHTML+=text;
+       }
+   }
+
+   set();
+   setInterval("snow()",200);
+</script>
+</body>
+</html>
